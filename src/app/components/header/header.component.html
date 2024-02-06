@@ -1,35 +1,106 @@
-<header class="bg-gray-700 text-white">
-    <div class="flex justify-between items-center gap-6 h-36">
-        <div>
-            <span class="material-symbols-outlined text-3xl">menu</span>
-        </div>
-        <div>
-            <img [ngSrc]="'./assets/logo.svg'" [width]="80" [height]="100">
-        </div>
-        <div class="relative flex-1">
-            <input type="text" class="w-full py-3 px-4 border rounded-md focus:outline-none text-gray-950" placeholder="Pesquisar">
-            <span class="material-symbols-outlined absolute inset-y-0 right-0 flex items-center pr-4 text-gray-950">search</span>
-        </div>
-
-        <div class="flex items-center">
-            <span class="material-symbols-outlined text-5xl">account_circle</span>
-            <p>Olá, <b>Hállan</b><br>Seja bem vindo(a)!</p>
-        </div>
-        <div class="flex gap-3">
-            <a href="#"><span class="material-symbols-outlined text-3xl">shopping_cart</span></a>
-            <a href="#"><span class="material-symbols-outlined text-3xl">favorite</span></a>
-            <a href="#"><span class="material-symbols-outlined text-3xl">help</span></a>
-        </div>
-    </div>
-    <hr>
-    <div class="flex h-11">
-        <select class="form-select bg-orange-600 border-none w-80">
-            <option selected>Departamentos</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-        </select>
-    </div>
+<header class="primary flex justify-center px-3 pt-3">
+    <mat-toolbar color="primary" class="container">
+        <mat-toolbar-row class="flex justify-between gap-10 mb-10 mt-4">
+            <div class="grid items-center grid-cols-5 gap-4 w-full">
+                <a href="#">
+                    <img ngSrc="assets/logo.svg" width="100" height="100">
+                </a>
+                <div class="flex items-center gap-3 col-span-4">
+                    <mat-form-field class="w-full">
+                        <input matInput placeholder="Pesquisar">
+                        <button mat-icon-button matSuffix>
+                            <mat-icon color="primary">search</mat-icon>
+                        </button>
+                    </mat-form-field>
+                    <div class="justify-center items-center hidden md:flex">
+                        <mat-icon class="icone-person text-6xl" style="vertical-align: middle; height: auto; width: auto;">account_circle</mat-icon>
+                        <p>Olá, seja Bem vindo(a)!<br><b>Hállan Neves</b></p>
+                    </div>
+                    <div class="hidden gap-3 items-center ms-5 md:flex">
+                        <button mat-icon-button>
+                            <a href="#">
+                                <mat-icon>shopping_cart</mat-icon>
+                            </a>
+                        </button>
+                        <button mat-icon-button>
+                            <a href="#">
+                                <mat-icon>favorite</mat-icon>
+                            </a>
+                        </button>
+                        <button mat-icon-button>
+                            <a href="">
+                                <mat-icon>support_agent</mat-icon>
+                            </a>
+                        </button>
+                    </div>
+                    <div class="block gap-3 items-center md:hidden">
+                        <button mat-icon-button [matMenuTriggerFor]="menu">
+                            <mat-icon>menu</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <a href="#">
+                                <button mat-menu-item>
+                                    <mat-icon color="primary">shopping_cart</mat-icon>
+                                    <span>Carrinho</span>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button mat-menu-item>
+                                    <mat-icon color="primary">favorite</mat-icon>
+                                    <span>Favoritos</span>
+                                </button>
+                            </a>
+                            <a href="#">
+                                <button mat-menu-item>
+                                    <mat-icon color="primary">support_agent</mat-icon>
+                                    <span>Suporte</span>
+                                </button>
+                            </a>
+                            <hr>
+                            <button mat-menu-item>
+                                <div class="flex items-center">
+                                    @if (true) {
+                                    <img class="rounded-full me-3" ngSrc="assets/profile.jpg" width="30" height="30">
+                                    }@else {
+                                    <mat-icon color="primary">person</mat-icon>
+                                    }
+                                    <span>Acessa perfil</span>
+                                </div>
+                            </button>
+                        </mat-menu>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="flex justify-start gap-10 md:justify-center">
+            <mat-form-field>
+                <mat-label>Todas as categorias</mat-label>
+                <mat-select>
+                    <mat-option><a href="#">Moda</a></mat-option>
+                    <mat-option><a href="#">Móveis</a></mat-option>
+                    <mat-option><a href="#">Eletrodomésticos</a></mat-option>
+                    <mat-option><a href="#">TV e Vídeo</a></mat-option>
+                    <mat-option><a href="#">Informática</a></mat-option>
+                    <mat-option><a href="#">Periféricos</a></mat-option>
+                    <mat-option><a href="#">Celulares</a></mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div class="flex">
+                <div class="flex">
+                    <div class="gap-3 hidden lg:flex">
+                        <a mat-button href="#" class="p-4">Moda</a>
+                        <a mat-button href="#" class="p-4">Móveis</a>
+                        <a mat-button href="#" class="p-4">Eletrodomésticos</a>
+                    </div>
+                    <div class="hidden gap-3 md:flex">
+                        <a mat-button href="#" class="p-4">TV e Vídeo</a>
+                        <a mat-button href="#" class="p-4">Informática</a>
+                        <a mat-button href="#" class="p-4">Periféricos</a>
+                        <a mat-button href="#" class="p-4">Celulares</a>
+                        <a mat-button href="#" class="p-4">Casa e Decoração</a>
+                    </div>
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </header>
-<app-button content="Botão teste" [styleButton]="'primary'"></app-button>
-<app-button content="Botão teste" [styleButton]="'secondary'"></app-button>

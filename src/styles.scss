@@ -1,0 +1,52 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$retail-store-primary: mat.define-palette(mat.$deep-purple-palette, 500);
+$retail-store-accent: mat.define-palette(mat.$deep-purple-palette, 700);
+$retail-store-warn: mat.define-palette(mat.$deep-purple-palette, 900);
+
+$retail-store-theme: mat.define-light-theme((
+  color: (
+    primary: $retail-store-primary,
+    accent: $retail-store-accent,
+    warn: $retail-store-warn,
+  )
+));
+
+
+
+@include mat.all-component-themes($retail-store-theme);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-family: "Roboto", 'Courier New', Courier, monospace;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.primary{
+    background-color: #673AB7;
+}
+.secondary{
+    background-color: #512DA8;
+}
+.tertiary{
+    background-color: #311B92;
+}
+.quaternary{
+    background-color: #1A237E;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-mdc-form-field-subscript-wrapper {
+   display: none;
+}
+  
