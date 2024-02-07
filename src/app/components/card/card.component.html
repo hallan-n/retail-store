@@ -1,29 +1,30 @@
-<div class="mt-10 max-w-72 rounded-lg overflow-hidden border-2">
-    <div>
-        <div class="min-h-60 bg-cover bg-center" style="background-image: url('assets/profile.jpg');">
-            <div class="flex justify-between items-center text-white">
-                <div class="flex">
-                    <button mat-icon-button>
-                        <mat-icon class="shadow-2xl">favorite</mat-icon>
-                    </button>
-                    <button mat-icon-button>
-                        <mat-icon class="shadow-2xl">shopping_cart</mat-icon>
-                    </button>
-                </div>
-                <div class="flex items-center bg-red-500 px-3 py-2 me-2 rounded-md">
-                    <mat-icon class="text-yellow-300">star</mat-icon>
-                    <p class="p-0 m-0 font-bold">4.9</p>
-                </div>
+<mat-card class="rounded-lg overflow-hidden max-w-72">
+    <div class="parent relative">
+        <img mat-card-image src="assets/profile.jpg" alt="Photo of a Shiba Inu">
+        <div class="child absolute top-0 w-full flex p-3 justify-between items-center text-white bg-gradient-to-b from-black to-transparent">
+            <div class="flex">
+                <button mat-icon-button>
+                    <mat-icon class="shadow-2xl">favorite</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon class="shadow-2xl">shopping_cart</mat-icon>
+                </button>
             </div>
-        </div>
-        <div class="p-3">
-            <h1 class="font-bold">Macaco super feliz</h1>
-            <small class="line-through">R$1280</small>
-            <div class="flex items-center justify-between">
-                <p class="text-5xl font-bold">R$ 549</p>
-                <p class="text-lg font-bold text-lime-700">12% OFF</p>
+            <div class="flex items-center bg-red-500 px-3 py-2 me-2 rounded-md">
+                <mat-icon class="text-yellow-300">star</mat-icon>
+                <p class="p-0 m-0 font-bold">4.9</p>
             </div>
-            <button mat-raised-button color="primary" class="w-full mt-2">Comprar</button>
         </div>
     </div>
-</div>
+    <mat-card-content>
+        <h1 class="font-bold mt-2">Macaco super feliz</h1>
+        <small class="line-through">R$1280</small>
+        <div class="flex items-center justify-between">
+            <p class="text-5xl font-bold">R$ 549</p>
+            <p class="text-lg font-bold text-lime-700">12% OFF</p>
+        </div>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" class="w-full mt-4">Comprar</button>
+    </mat-card-actions>
+</mat-card>
