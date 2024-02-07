@@ -1,6 +1,6 @@
 <mat-card class="rounded-lg overflow-hidden mx-auto">
     <div class="parent relative">
-        <img mat-card-image src="assets/profile.jpg" alt="Photo of a Shiba Inu">
+        <img mat-card-image [ngSrc]="thumb" width="700" height="700">
         <div class="child absolute top-0 w-full flex p-3 justify-between items-center text-white bg-gradient-to-b from-black to-transparent">
             <div class="flex">
                 <button mat-icon-button>
@@ -12,16 +12,16 @@
             </div>
             <div class="flex items-center bg-red-500 px-3 py-2 me-2 rounded-md">
                 <mat-icon class="text-yellow-300">star</mat-icon>
-                <p class="p-0 m-0 font-bold">4.9</p>
+                <p class="p-0 m-0 font-bold">{{ rating }}</p>
             </div>
         </div>
     </div>
     <mat-card-content>
-        <h1 class="font-bold mt-2">Macaco super feliz</h1>
-        <small class="line-through">R$1280</small>
+        <h1 class="font-bold mt-2">{{ cardTitle }}</h1>
+        <small class="line-through">R${{ price }}</small>
         <div class="flex items-center justify-between">
-            <p class="text-5xl font-bold"><span class="text-2xl">R$</span>549</p>
-            <p class="text-lg font-bold text-lime-700">12% OFF</p>
+            <p class="text-5xl font-bold"><span class="text-2xl">R$</span>{{ price - (price * discount) }}</p>
+            <p class="text-lg font-bold text-lime-700">{{ discount * 100 }}% OFF</p>
         </div>
     </mat-card-content>
     <mat-card-actions>
