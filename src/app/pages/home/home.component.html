@@ -5,30 +5,16 @@
 </div> -->
 
 <div class="container gap-4 mx-auto mt-10 p-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    <app-card [cardTitle]="'Bind no title'" [discount]="0.10" [price]="1000" [rating]="2.9" />
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
-    <app-card></app-card>
+    @for (item of product; track $index) {
+        <app-card
+            [cardTitle]="item.cardTitle"
+            [discount]="item.discount"
+            [price]="item.price.toFixed(2)"
+            [rating]="item.rating"
+            [thumb]="item.thumb"
+        />
+        
+    }
 </div>
 <app-paginator></app-paginator>
+

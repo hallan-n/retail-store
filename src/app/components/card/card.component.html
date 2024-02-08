@@ -1,6 +1,6 @@
 <mat-card class="rounded-lg overflow-hidden mx-auto">
     <div class="parent relative">
-        <img mat-card-image [ngSrc]="thumb" width="700" height="700">
+        <img mat-card-image [ngSrc]="thumb" width="700" height="700" class="max-h-96 object-cover">
         <div class="child absolute top-0 w-full flex p-3 justify-between items-center text-white bg-gradient-to-b from-black to-transparent">
             <div class="flex">
                 <button mat-icon-button>
@@ -20,8 +20,8 @@
         <h1 class="font-bold mt-2">{{ cardTitle }}</h1>
         <small class="line-through">R${{ price }}</small>
         <div class="flex items-center justify-between">
-            <p class="text-5xl font-bold"><span class="text-2xl">R$</span>{{ price - (price * discount) }}</p>
-            <p class="text-lg font-bold text-lime-700">{{ discount * 100 }}% OFF</p>
+            <p class="text-5xl font-bold"><span class="text-2xl">R$</span>{{ (price - (price * discount)).toFixed(2) }}</p>
+            <p class="text-lg font-bold text-lime-700">{{ (discount * 100).toFixed(0) }}% OFF</p>
         </div>
     </mat-card-content>
     <mat-card-actions>

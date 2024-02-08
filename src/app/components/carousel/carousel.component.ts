@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { initFlowbite } from 'flowbite';
+import { RetailStoreService } from '../../services/retail-store.service';
+import { productData } from '../../models/productData';
 
 
 type Image = {
@@ -13,8 +15,18 @@ type Image = {
   templateUrl: './carousel.component.html'
 })
 export class CarouselComponent implements OnInit {
+  productThumb: string[] = []
+  constructor(private service: RetailStoreService) { }
   ngOnInit(): void {
     initFlowbite();
+    this.service.getProducts().subscribe(
+      {
+        next: (resp) => resp.slice(1,10).map((item)=>{
+          this.productThumb.push(item.thumb)
+        }),
+        error: (error) => console.log(error),
+      }
+    )
   }
   images: Image[] = [
     { id: 0, src: "assets/profile.jpg" },
